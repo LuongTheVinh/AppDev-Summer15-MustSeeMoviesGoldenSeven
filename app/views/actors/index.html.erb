@@ -1,0 +1,34 @@
+<h1>List of Actors</h1>
+
+<a href="http://localhost:3000/actors/new">Add a New Actor</a>
+
+<table>
+    <tr>
+        <th>Thumbnail</th>
+        <th>Name</th>
+        <th>D.O.B.</th>
+        <th colspan="3">Actions</th>
+    </tr>
+    <% @list_of_actors.each do |actor| %>
+        <tr>
+            <td>
+                <img src="<%= actor.image_url %>" width="80">
+            </td>
+            <td>
+                <%= actor.name %>
+            </td>
+            <td>
+                <%= actor.dob%>
+            </td>
+            <td>
+                <a href="http://localhost:3000/actors/<%= actor.id %>">Show</a>
+            </td>
+            <td>
+                <a href="http://localhost:3000/actors/<%= actor.id %>/edit">Edit</a>
+            </td>
+            <td>
+                <a href="http://localhost:3000/actors/<%= actor.id %>/delete">Delete</a>
+            </td>
+        </tr>
+    <% end %>
+</table>
